@@ -27,7 +27,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ZerockvNext\\Notice": "src/Notice"
+      "ZerockvNext\\Notice\\": "src/Notice"
     }
   }
 }
