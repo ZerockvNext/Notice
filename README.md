@@ -109,6 +109,27 @@ return [
 
 If you set the value of $Type, then this method will return the result of the corresponding type.
 
+#### Count Messages
+
+```php
+Notice::MailBox()->receiver(4);
+
+Notice::MailBox()->hasUnread(); // Type = null, return bool
+Notice::MailBox()->hasUnread(Notice::Consts()->typeMessage());
+
+Notice::MailBox()->totalUnread(); // Type = null, return unread count num
+Notice::MailBox()->totalUnread(Notice::Consts()->typeMessage());
+
+Notice::MailBox()->totalMessages(); // Type = null, return count num
+Notice::MailBox()->totalMessages(Notice::Consts()->typeMessage());
+
+Notice::MailBox()->countUnread(); // Type = null
+// return array like this ['message' => 5, 'notice' => 2, 'system' => 3]
+
+Notice::MailBox()->countUnread(Notice::Consts()->typeMessage());
+// return array like this ['message' => 5]
+```
+
 #### Get Specified Message
 
 ```php
