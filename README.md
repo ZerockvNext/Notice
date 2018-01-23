@@ -29,10 +29,15 @@ ZerockvNext\Notice\NoticeServiceProvider::class,
 'Notice' => ZerockvNext\Notice\NoticeFacade::class,
 ```
 
-4) Run the command below to publish the package config file `config/entrust.php`:
+4) Run the command below to publish the package config & migration files:
 
 ```shell
 php artisan vendor:publish --provider="ZerockvNext\Notice\NoticeServiceProvider"
+```
+
+5) Run migrate
+```shell
+php artisan migrate
 ```
 
 ## Configuration
