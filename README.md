@@ -148,6 +148,7 @@ Notice::MailBox()->receiver(4)->read(1) // Transfer ID
 Notice::MailBox()->receiver(4)->read([1,2,3,4]) // Transfer IDs
 
 Notice::MailBox()->receiver(4)->readAll();
+Notice::MailBox()->receiver(4)->readAll(Notice::Consts()->typeMessage()); // Type
 
 Notice::MailBox()->receiver(4)->unread(1) // Transfer ID
 Notice::MailBox()->receiver(4)->unread([1,2,3,4]) // Transfer IDs

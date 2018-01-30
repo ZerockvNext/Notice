@@ -109,9 +109,9 @@ class MailBox {
 								->read($TransferIDs, $this->_Receiver);
 	}
 
-	public function readAll() {
+	public function readAll($Type = null) {
 		return $this->checkThrowReceiver()->getTransferModel()
-								->readAll($this->_Receiver);
+								->readAll($this->_Receiver, $Type);
 	}
 
 	public function unread($TransferIDs) {

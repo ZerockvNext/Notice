@@ -43,7 +43,6 @@ class NoticeTransferLogicModel extends NoticeTransferStructModel {
 		$this->queryType($Query, $Type);
 		$this->queryUnread($Query);
 		$this->queryRemoved($Query);
-
 		return $Query->count('type');
 	}
 
@@ -63,9 +62,11 @@ class NoticeTransferLogicModel extends NoticeTransferStructModel {
 		return $Query->update(['read_at' => Carbon::now()]);
 	}
 
-	public function readAll($Receiver) {
-		return $this->queryReceiver(static::query(), $Receiver)
-								->update(['read_at' => Carbon::now()]);
+	public function readAll($Receiver, $Type = null) {
+		$Query = static::query();
+		$this->queryReceiver($Query, $Receiver);
+		$this->queryType($Query, $Type);
+		return $Query->update(['read_at' => Carbon::now()]);
 	}
 
 	public function unread($TransferIDs, $Receiver = null) {
