@@ -1,4 +1,4 @@
-# Noice
+# Noice (Laravel 5 Notice package)
 
 This library is a concise web application notification center to **Laravel 5**
 
